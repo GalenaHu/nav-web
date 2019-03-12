@@ -1,0 +1,47 @@
+/*
+* @Author: Galena
+* @Date:   2019-03-12 20:10:43
+* @Last Modified by:   Galena
+* @Last Modified time: 2019-03-12 22:27:09
+*/
+* {
+	margin: 0;
+	padding: 0;
+	background-color: #494A5F;
+}
+
+a {
+	text-decoration: none;
+}
+
+#main {
+	background-color: #494A5F;
+	text-align: center;
+	min-width: 1200px;
+}
+
+#wrapper {
+	display: inline-block;
+}
+
+kbd {
+	display: inline-block;
+	color: #C6C7D4;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #C6C7D4;
+	margin: 8px;
+	border-radius: 8px;
+	font-size: 60px;
+	position: relative;
+}
+
+.buttonWrapper {
+	display: block;
+	position: absolute;
+
+}
+
+kbd:hover >.buttonWrapper {
+	display: block;
+}
