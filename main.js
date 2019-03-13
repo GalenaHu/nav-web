@@ -57,13 +57,20 @@ while (i<keys.length) {
 		//弹出网址
 		letter.onclick = function(e) {
 			var thisRow = this.parentNode.parentNode;
+
 			//如果已经存在则删除
 			if (document.getElementsByClassName('site')) {
+
 				var paras = document.getElementsByClassName('site');
 				while(paras[0]) {
 				    paras[0].parentNode.removeChild(paras[0]);
 				}
 			}
+			var allKbds = document.getElementsByClassName('kbd');
+			for (var k=0;k<allKbds.length;k++) {
+				allKbds[k].style.backgroundColor = '#494A5F';
+			}
+			this.parentNode.style.backgroundColor = '#3D3E4E';
 			var site = document.createElement('div');
 			site.className = 'site';
 			var key = this.parentNode.getAttribute('id');
@@ -121,7 +128,12 @@ document.onkeypress = function(e) {
 };
 //监听点击
 document.onclick = function(e) {
+
 	if (e.target.getAttribute('class') !== 'letter') {
+		var allKbds = document.getElementsByClassName('kbd');
+		for (var k=0;k<allKbds.length;k++) {
+			allKbds[k].style.backgroundColor = '#494A5F';
+		}
 		if (document.getElementsByClassName('site')) {
 			var paras = document.getElementsByClassName('site');
 			while(paras[0]) {

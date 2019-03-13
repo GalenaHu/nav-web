@@ -2,7 +2,7 @@
 * @Author: Galena
 * @Date:   2019-03-12 20:10:43
 * @Last Modified by:   Galena
-* @Last Modified time: 2019-03-13 18:29:34
+* @Last Modified time: 2019-03-13 22:15:46
 */
 * {
 	margin: 0;
@@ -14,7 +14,7 @@
 #main {
 	background-color: #494A5F;
 	min-width: 1200px;
-	margin: 100px 0;
+	margin: 270px 0;
 }
 
 #wrapper {
@@ -77,4 +77,32 @@
 	color: #D5D6E2;
 	box-shadow: inset 0px 0px 23px 5px rgba(0,0,0,0.3);
 
+}
+
+.head {
+	position: fixed;
+	top: 0;
+	background-color: black;
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+	color: #D5D6E2;
+	width: 100%;
+	min-width: 1200px;
+	padding: 30px;
+}
+.foot {
+	position: fixed;
+	bottom: 0;
+	background-color: black;
+
+
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: #D5D6E2;
+	width: 100%;
+	min-width: 1200px;
+	padding: 10px;
+	
 }
