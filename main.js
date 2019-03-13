@@ -8,7 +8,7 @@ var hash = {
 	q: 'https://www.qq.com/',
 	w: 'https://weibo.com/',
 	e: 'https://www.explainshell.com/',
-	r: undefined,
+	r: 'http://javascript.ruanyifeng.com/',
 	t: 'http://www.ttmeiju.vip/',
 	y: 'https://www.youtube.com/',
 	u: undefined,
@@ -89,6 +89,8 @@ while (i<keys.length) {
 	}
 	i = i + 1;
 }
+
+//监听键盘
 document.onkeypress = function(e) {
 	key = e['key'];
 	website = hash[key];
