@@ -2,7 +2,7 @@
 * @Author: Galena
 * @Date:   2019-03-12 20:10:43
 * @Last Modified by:   Galena
-* @Last Modified time: 2019-03-13 22:15:46
+* @Last Modified time: 2019-03-13 22:28:23
 */
 * {
 	margin: 0;
@@ -95,8 +95,6 @@
 	position: fixed;
 	bottom: 0;
 	background-color: black;
-
-
 	text-align: center;
 	font-size: 20px;
 	font-weight: bold;
@@ -104,5 +102,4 @@
 	width: 100%;
 	min-width: 1200px;
 	padding: 10px;
-	
 }
