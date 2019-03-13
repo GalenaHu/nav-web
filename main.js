@@ -1,9 +1,3 @@
-/*
-* @Author: Galena
-* @Date:   2019-03-12 20:11:00
-* @Last Modified by:   Galena
-* @Last Modified time: 2019-03-12 22:20:31
-*/
 var keys = {
 			0: ['q','w','e','r','t','y','u','i','o','p'],
 			1: ['a','s','d','f','g','h','j','k','l'],
@@ -43,17 +37,23 @@ var hash = {
 hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null');
 if (hashInLocalStorage) {
 	hash = hashInLocalStorage;
-};
+}
 
 //遍历keys
-var i = 0
+var i = 0;
 while (i<keys.length) {
 	var div1 = document.createElement('div');
+	div1.className = 'row';
 	wrapper.appendChild(div1);
 	var j = 0;
 	while (j<keys[i].length) {
-		var kbd = document.createElement('kbd');
-		kbd.textContent = keys[i][j];
+		var div2 = document.createElement('div');
+		div2.id = keys[i][j];
+		div2.className = 'kbd';
+		var letter = document.createElement('div');
+		letter.textContent = keys[i][j];
+		letter.className = 'letter';
+		div2.appendChild(letter);
 		//添加按钮
 		var div3 = document.createElement('div');
 		div3.className = 'buttonWrapper';
@@ -65,10 +65,10 @@ while (i<keys.length) {
 		button1.onclick = function(e) {
 			key = e['target']['id'][0];
 			x = prompt('输入网址：');
-			hash[key] = x
+			hash[key] = x;
 			localStorage.setItem('zzz', JSON.stringify(hash));
 			console.log(hash);
-		}
+		};
 		div3.appendChild(button1);
 
 		//删除按钮
@@ -79,18 +79,18 @@ while (i<keys.length) {
 			hash[key] = undefined;
 			localStorage.setItem('zzz', JSON.stringify(hash));
 			console.log(hash);
-		}
+		};
 		div3.appendChild(button2);
 
-		kbd.appendChild(div3);
+		div2.appendChild(div3);
 
-		div1.appendChild(kbd);
+		div1.appendChild(div2);
 		j = j + 1;
-	};
+	}
 	i = i + 1;
-};
+}
 document.onkeypress = function(e) {
 	key = e['key'];
 	website = hash[key];
 	window.open(website, '_blank'); 
-}
+};
