@@ -25,7 +25,7 @@ var hash = {
 	k: undefined,
 	l: 'http://localhost:8080',
 	z: 'https://www.zimuku.cn/',
-	x: 'https://xiedaimala.com/courses/ec3a5e28-02da-47d6-9226-927db23e82a2#/common',
+	x: 'https://xiedaimala.com/',
 	c: 'http://www.cnki.net/',
 	v: 'https://my.vultr.com/',
 	b: 'https://www.bilibili.com/',
@@ -53,7 +53,30 @@ while (i<keys.length) {
 		var letter = document.createElement('div');
 		letter.textContent = keys[i][j];
 		letter.className = 'letter';
+
+		//弹出网址
+		letter.onclick = function(e) {
+			var thisRow = this.parentNode.parentNode;
+			//如果已经存在则删除
+			if (document.getElementsByClassName('site')) {
+				var paras = document.getElementsByClassName('site');
+				while(paras[0]) {
+				    paras[0].parentNode.removeChild(paras[0]);
+				}
+			}
+			var site = document.createElement('div');
+			site.className = 'site';
+			var key = this.parentNode.getAttribute('id');
+			if (hash[key] != undefined) {
+				site.textContent = hash[key];
+			} else {
+				site.textContent = 'none';
+			}
+			thisRow.parentNode.insertBefore(site, thisRow.nextSibling);
+		};
 		div2.appendChild(letter);
+
+
 		//添加按钮
 		var div3 = document.createElement('div');
 		div3.className = 'buttonWrapper';
@@ -63,7 +86,7 @@ while (i<keys.length) {
 		button1.textContent = 'Edit';
 		button1.id = keys[i][j] + 'Edit';
 		button1.onclick = function(e) {
-			key = e['target']['id'][0];
+			var key = e['target']['id'][0];
 			x = prompt('输入网址：');
 			hash[key] = x;
 			localStorage.setItem('zzz', JSON.stringify(hash));
@@ -96,3 +119,15 @@ document.onkeypress = function(e) {
 	website = hash[key];
 	window.open(website, '_blank'); 
 };
+//监听点击
+document.onclick = function(e) {
+	if (e.target.getAttribute('class') !== 'letter') {
+		if (document.getElementsByClassName('site')) {
+			var paras = document.getElementsByClassName('site');
+			while(paras[0]) {
+			    paras[0].parentNode.removeChild(paras[0]);
+			}
+		}
+	}
+}
+	

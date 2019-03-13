@@ -2,12 +2,13 @@
 * @Author: Galena
 * @Date:   2019-03-12 20:10:43
 * @Last Modified by:   Galena
-* @Last Modified time: 2019-03-13 15:34:13
+* @Last Modified time: 2019-03-13 18:29:34
 */
 * {
 	margin: 0;
 	padding: 0;
 	background-color: #494A5F;
+
 }
 
 #main {
@@ -41,6 +42,7 @@
 	height: 100%;
 	line-height: 100px;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 .kbd > .buttonWrapper {
@@ -55,14 +57,24 @@
 	border: none;
 	background-color: transparent;
 	color: #D5D6E2;
+	cursor: pointer;
 }
 
 .kbd:hover > .buttonWrapper {
-	background-color: #434456;
+	background-color: #3D3E4E;
 	display: block;
 }
 
 .kbd:hover > .letter {
 	height: 70%;
 	line-height: 70px;
+	transition: line-height 0.2s;
+}
+
+.site {
+	background-color: #3D3E4E;
+	font-size: 30px;
+	color: #D5D6E2;
+	box-shadow: inset 0px 0px 23px 5px rgba(0,0,0,0.3);
+
 }
