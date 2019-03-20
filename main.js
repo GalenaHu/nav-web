@@ -97,7 +97,6 @@ while (i<keys.length) {
 			x = prompt('输入网址：');
 			hash[key] = x;
 			localStorage.setItem('zzz', JSON.stringify(hash));
-			console.log(hash);
 		};
 		div3.appendChild(button1);
 
@@ -106,6 +105,7 @@ while (i<keys.length) {
 		button2.textContent = 'Delete';
 		button2.id = keys[i][j] + 'Delete';
 		button2.onclick = function(e) {
+			var key = e['target']['id'][0];
 			hash[key] = undefined;
 			localStorage.setItem('zzz', JSON.stringify(hash));
 			console.log(hash);
